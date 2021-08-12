@@ -2,11 +2,11 @@ import React from "react";
 import Header from "../components/common/Header/Header";
 import AddTodo from "../components/AddTodo/AddTodo";
 import Todos from "../components/Todos/Todos";
-import Footer from "../components/common/Footer/Footer"
+import Footer from "../components/common/Footer/Footer";
 import { v4 as uuidv4 } from "uuid";
 
 
-class TodoApp extends React.Component {
+class App extends React.Component {
   state = {
     todos: [
       {
@@ -76,4 +76,4 @@ class TodoApp extends React.Component {
   }
 }
 
-export default TodoApp;
+export default App;

@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { Input, Typography, Fab } from '@material-ui/core';
-import myStyle from "./AddTodoStyle"
+import { Typography, Fab } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 
-export default myStyle(class AddTodo extends Component {
+class AddTodo extends Component {
   state = {
     title: ""
   };
@@ -13,7 +12,7 @@ export default myStyle(class AddTodo extends Component {
     });
   };
   onSubmit = e => {
-    if(Input.value.length < 1) {
+    if(!this.state.title) {
       return;
     }
     e.preventDefault();
@@ -23,23 +22,32 @@ export default myStyle(class AddTodo extends Component {
     });
   };
   render() {
-    const { classes } = this.props;
     return (
-      <div className={classes.container}>
-      <Typography className={classes.text} variant="h1">Todos</Typography>
-      <form className={classes.formControler} onSubmit={this.onSubmit}>
-        <Input
+      <React.Fragment>
+        <div
+          style={{
+            display:"flex",
+            justifyContent: "center",
+            textAlign: "center",
+            flexDirection: "row"
+          }}>
+      <form  onSubmit={this.onSubmit} >
+        <input
           type="text"
+          name="title"
           placeholder="Add Todo..."
           value={this.state.title}
           onChange={this.onChange}
-          className={classes.input}
+          autoComplete="off"
+          style={{width:"300px",padding:"10px", borderRadius: "50px", margin:"5px", outline:"0" }}
         />
-          <Fab type="submit" color="primary" aria-label="add">
-          <AddIcon />
-        </Fab>
+      <Fab type="submit" value="Submit" color="primary" aria-label="add">
+        <AddIcon />
+      </Fab>
     </form>
-    </div>
+  </div>
+  </React.Fragment>
     );
   }
-})
+}
+export default AddTodo;

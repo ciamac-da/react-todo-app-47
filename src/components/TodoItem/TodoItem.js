@@ -3,6 +3,7 @@ import { Button, List, Checkbox } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import myStyle from "./TodoItemStyle"
 
+
 export default myStyle(class TodoItem extends React.Component {
   render() {
     const completedStyle = {
