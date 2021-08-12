@@ -1,4 +1,4 @@
-https://ciamac-da.gitgub.io/react-todo-app-47
+https://ciamac-da.github.io/react-todo-app-47
 
 ![](public/assets/1.jpg)
 
