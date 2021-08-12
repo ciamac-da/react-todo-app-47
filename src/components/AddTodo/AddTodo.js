@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Typography, Fab } from '@material-ui/core';
+import React, {Component} from "react";
+import { Fab } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 
 class AddTodo extends Component {
@@ -12,42 +12,35 @@ class AddTodo extends Component {
     });
   };
   onSubmit = e => {
-    if(!this.state.title) {
+    if (!this.state.title) {
       return;
     }
     e.preventDefault();
     this.props.addTodo(this.state.title);
-    this.setState({
-      title: ""
-    });
+    this.setState({title: ""});
   };
   render() {
-    return (
-      <React.Fragment>
-        <div
-          style={{
-            display:"flex",
-            justifyContent: "center",
-            textAlign: "center",
-            flexDirection: "row"
-          }}>
-      <form  onSubmit={this.onSubmit} >
-        <input
-          type="text"
-          name="title"
-          placeholder="Add Todo..."
-          value={this.state.title}
-          onChange={this.onChange}
-          autoComplete="off"
-          style={{width:"300px",padding:"10px", borderRadius: "50px", margin:"5px", outline:"0" }}
-        />
-      <Fab type="submit" value="Submit" color="primary" aria-label="add">
-        <AddIcon />
-      </Fab>
-    </form>
-  </div>
-  </React.Fragment>
-    );
+    return (<React.Fragment>
+      <div style={{
+          display: "flex",
+          justifyContent: "center",
+          textAlign: "center",
+          flexDirection: "row"
+        }}>
+        <form onSubmit={this.onSubmit}>
+          <input type="text" name="title" placeholder="Add Todo..." value={this.state.title} onChange={this.onChange} autoComplete="off" style={{
+              width: "300px",
+              padding: "10px",
+              borderRadius: "50px",
+              margin: "5px",
+              outline: "0"
+            }}/>
+          <Fab type="submit" value="Submit" color="primary" aria-label="add">
+            <AddIcon/>
+          </Fab>
+        </form>
+      </div>
+    </React.Fragment>);
   }
 }
 export default AddTodo;
