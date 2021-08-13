@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { Fab } from '@material-ui/core';
+import {Fab, Typography} from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 
 class AddTodo extends Component {
@@ -21,6 +21,14 @@ class AddTodo extends Component {
   };
   render() {
     return (<React.Fragment>
+      <Typography style={{
+        position:"absolute",
+        left:"44%",
+        margin:"auto",
+        color :"#3f51b5"
+      }}
+      variant="h1"
+      >Todos</Typography>
       <div style={{
           display: "flex",
           justifyContent: "center",
@@ -33,7 +41,8 @@ class AddTodo extends Component {
               padding: "10px",
               borderRadius: "50px",
               margin: "5px",
-              outline: "0"
+              outline: "0",
+              marginTop: "200px",
             }}/>
           <Fab type="submit" value="Submit" color="primary" aria-label="add">
             <AddIcon/>
