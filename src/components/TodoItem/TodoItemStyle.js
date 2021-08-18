@@ -1,7 +1,7 @@
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles } from "@material-ui/core/styles";
 
 const useStyles = withStyles((theme) => ({
-  container : {
+  container: {
     display: "grid",
   },
   todoItem: {
@@ -9,11 +9,11 @@ const useStyles = withStyles((theme) => ({
     padding: "10px 15px",
     borderTop: "1px solid #678c89",
     width: "70%",
-    margin:"auto"
+    margin: "auto",
   },
   button: {
     margin: theme.spacing(1),
-    float: "right"
+    float: "right",
   },
 }));
 export default useStyles;

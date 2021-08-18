@@ -1,9 +1,8 @@
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles } from "@material-ui/core/styles";
 
 const useStyles = withStyles((theme) => ({
-  container : {
-    marginTop: "250px"
+  container: {
+    marginTop: "250px",
   },
-
 }));
 export default useStyles;
