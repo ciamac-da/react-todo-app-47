@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     display: "block",
     width: "100vw",
     marginBottom: "0px",
-    height: "33px",
+    height: "25px",
   },
   typo: {
     color: "#fff",

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Fab, Typography } from "@material-ui/core";
+import { Typography, Fab } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 
 class AddTodo extends Component {
@@ -12,7 +12,7 @@ class AddTodo extends Component {
     });
   };
   onSubmit = (e) => {
-    if (!this.state.title) {
+    if (!this.state.title || this.state.title.trim() === "") {
       return;
     }
     e.preventDefault();
@@ -39,9 +39,10 @@ class AddTodo extends Component {
             justifyContent: "center",
             textAlign: "center",
             flexDirection: "row",
+            marginTop: "150px",
           }}
         >
-          <form onSubmit={this.onSubmit}>
+          <form onSubmit={this.onSubmit} style={{position:"relative"}}>
             <input
               type="text"
               name="title"
@@ -51,14 +52,13 @@ class AddTodo extends Component {
               autoComplete="off"
               style={{
                 width: "300px",
-                padding: "10px",
+                padding: "15px",
                 borderRadius: "50px",
                 margin: "5px",
                 outline: "0",
-                marginTop: "200px",
               }}
             />
-            <Fab type="submit" value="Submit" color="primary" aria-label="add">
+            <Fab type="submit" value="Submit" color="primary" aria-label="add" style={{position:"absolute", right:"6px", top:"3px"}}>
               <AddIcon />
             </Fab>
           </form>

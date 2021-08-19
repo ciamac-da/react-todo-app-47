@@ -4,8 +4,12 @@ import AddTodo from "../components/AddTodo/AddTodo";
 import Todos from "../components/Todos/Todos";
 import Footer from "../components/common/Footer/Footer";
 import { v4 as uuidv4 } from "uuid";
+import TodoCount from "../components/TodoCount/TodoCount";
+import myStyle from "./AppStyle";
 
-class App extends React.Component {
+
+export default myStyle(
+ class App extends React.Component {
   state = {
     todos: [
       {
@@ -49,7 +53,6 @@ class App extends React.Component {
 
   addTodo = (title) => {
     const newTodo = {
-      // id: uuid.v4(),
       id: uuidv4(),
       title: title,
       completed: false,
@@ -60,10 +63,12 @@ class App extends React.Component {
   };
 
   render() {
+    const {classes} = this.props;
     return (
-      <div className="container">
+      <div className={classes.container}>
         <Header />
         <AddTodo addTodo={this.addTodo} />
+        <TodoCount  todosProp={this.state.todos}/>
         <Todos
           todos={this.state.todos}
           handleChange={this.handleChange}
@@ -74,5 +79,4 @@ class App extends React.Component {
     );
   }
 }
-
-export default App;
+)
